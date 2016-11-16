@@ -9,16 +9,17 @@ using UnityEngine.SceneManagement;
 public class StartSceneControl : MonoBehaviour {
 
     public Canvas canvas;
-    public GameObject introducePanel;  // 游戏介绍的弹窗
-    public GameObject baseBtnGroup;    // 游戏介绍、开始游戏、退出游戏
-    public GameObject difficultyChioseBtnGroup; // 初级、中级、高级
+    public GameObject introducePanel;       // 游戏介绍的弹窗
+    public GameObject baseBtnGroup;         // 游戏介绍、开始游戏、退出游戏
+    public GameObject difficultyChioseBtnGroup;     // 初级、中级、高级
 
-    private GameObject curIntroducePanel; // 当前新建的介绍弹窗
+    private GameObject curIntroducePanel;   // 当前新建的介绍弹窗
+    private GameController gameController;
 
     // Use this for initialization
     void Start () {
-	    
-	}
+        gameController = GameController.instance;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,7 +45,6 @@ public class StartSceneControl : MonoBehaviour {
         // 调整位置和大小
         curIntroducePanel.transform.localPosition = Vector3.zero;
         curIntroducePanel.transform.localScale = Vector3.one;
-    
     }
 
     /// <summary>
@@ -71,6 +71,7 @@ public class StartSceneControl : MonoBehaviour {
     /// <param name="difficultyIndex">所选的难度</param>
     public void EnterGameScene(int difficultyIndex)
     {
-
+        gameController.difficulty = difficultyIndex;
+        SceneManager.LoadScene("GameScene");
     }
 }

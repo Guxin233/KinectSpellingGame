@@ -4,7 +4,8 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
     public static GameController instance;
-    private int curSceneIndex;  // 当前场景。0：开始场景。1：游戏场景。2：结束场景。
+    public int curSceneIndex;   // 当前场景。0：开始场景。1：游戏场景。2：结束场景。
+    public int difficulty;      // 游戏难度。0：初级。1：中级。2：高级。
 
     void Awake ()
     {

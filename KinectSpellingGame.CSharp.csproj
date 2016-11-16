@@ -157,6 +157,7 @@
     <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
     <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
     <Compile Include="Assets\_Scripts\GameController.cs" />
+    <Compile Include="Assets\_Scripts\GameSceneControl.cs" />
     <Compile Include="Assets\_Scripts\IntroducePanelControl.cs" />
     <Compile Include="Assets\_Scripts\StartSceneControl.cs" />
   </ItemGroup>
